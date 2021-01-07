@@ -13,7 +13,7 @@ int m2=Integer.parseInt(request.getParameter("m2"));
 int m3=Integer.parseInt(request.getParameter("m3"));
 int m4=Integer.parseInt(request.getParameter("m4"));
 int m5=Integer.parseInt(request.getParameter("m5"));
-int pr=(m1+m2+m3+m4+m5)/5;
+float pr=(m1+m2+m3+m4+m5)/5;
 if(pr>=90){
 	out.println("Your grade is : <h1>S</h1>");
 }
