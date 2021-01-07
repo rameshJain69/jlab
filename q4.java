@@ -16,13 +16,13 @@ doGet(request, response);
  protected void doGet(HttpServletRequest request, HttpServletResponse response)
 throws ServletException, IOException
  {
- response.setContentType("text/
+ response.setContentType("text/html");
  PrintWriter out = response.getWriter();
- int id = Integer.parseInt(request.
+ int id = Integer.parseInt(request.getParameter("id"));
  String name = request.getParameter("name");
  String add = request.getParameter("add");
  String dob = request.getParameter("dob");
- String url = "jdbc:mysql://localhost:3306/"
+ String url = "jdbc:mysql://localhost:3306/";
 String dbName = "mydb104";
 String driver = "com.mysql.jdbc.Driver";
 String userName = "root";
@@ -41,8 +41,7 @@ Connection conn = null;
  out.print("Successfully inserted the values");
  Statement st = (Statement) conn.createStatement();
  ResultSet rs = st.executeQuery("select * from Employee");
- out.print("<table> <tr> <th>Name</th> <th>Id</th> <th>Address</th>
-<th>DOB</th> </tr>");
+ out.print("<table> <tr> <th>Name</th> <th>Id</th> <th>Address</th> <th>DOB</th> </tr>");
  while(rs.next())
  {
  name = rs.getString("employee_name");
