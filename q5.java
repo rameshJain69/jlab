@@ -35,6 +35,19 @@ public class Q5Update extends HttpServlet {
 			conn = DriverManager.getConnection(url+dbName,userName,password);
 			System.out.println("Connected to the database");
 	
+			//to print all the existing entries look here
+			Statement st = (Statement) conn.createStatement();
+			ResultSet rs=st.executeQuery("select * from Subjects");
+			while(rs.next())
+ 			{
+ 			int fid=rs.getInt("fid");
+ 			String sub=rs.getString("sname");
+ 			int sid = rs.getInt("sid");
+ 			out.println("FacID "+fid+" SubName "+sname+" SubID "+sid);
+ 			out.println("<br>");
+			 }
+		
+			//update	
 			int fidask = Integer.parseInt(request.getParameter("fidask"));
 			String snameask = request.getParameter("snameask");
 			
