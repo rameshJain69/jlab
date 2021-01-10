@@ -14,7 +14,7 @@
 		HttpSession Session = request.getSession();
 		session.setAttribute("username", username);
 		session.setAttribute("password", password);
-		response.sendRedirect("q9welcome.jsp");
+		response.sendRedirect("q9_2.jsp");
 		
 		
 	%>
